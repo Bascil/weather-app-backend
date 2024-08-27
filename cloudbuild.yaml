@@ -49,6 +49,12 @@ steps:
       - "--allow-unauthenticated"
       - "--port"
       - "9804"
+      - "--min-instances"
+      - "0"
+      - "--max-instances"
+      - "1"
+      - "--memory"
+      - "256Mi"
 
 images:
   - "gcr.io/$PROJECT_ID/$REPO_NAME:$COMMIT_SHA"
