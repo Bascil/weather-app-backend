@@ -50,7 +50,7 @@ steps:
       - "--port"
       - "9804"
       - "--min-instances"
-      - "1"
+      - "0"
       - "--max-instances"
       - "1"
       - "--memory"
