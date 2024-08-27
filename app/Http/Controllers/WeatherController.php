@@ -20,4 +20,10 @@ class WeatherController extends Controller
         $response = $this->service->getWeatherData($request->validated());
         return response()->json(['data' => $response], Response::HTTP_OK);
     }
+
+    public function getWeatherForecast(GetWeatherRequest $request)
+    {
+        $response = $this->service->getWeatherForecast($request->validated());
+        return response()->json(['data' => $response], Response::HTTP_OK);
+    }
 }

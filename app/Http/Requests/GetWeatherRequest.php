@@ -32,6 +32,7 @@ class GetWeatherRequest extends FormRequest
     {
         return [
             'city' => ['required', 'string', 'min:3'],
+            'cnt' => ['nullable', 'numeric', 'gt:0'],
             'units' => ['required', Rule::in([
                 Constants::UNIT_STANDARD,
                 Constants::UNIT_METRIC,

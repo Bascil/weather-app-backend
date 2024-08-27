@@ -34,6 +34,23 @@ class WeatherApiService
     }
 
     /**
+     * getWeatherForecast
+     *
+     * @param  mixed $attributes
+     * @return void
+     */
+    public function getWeatherForecast(array $attributes)
+    {
+        $params = [
+            'q' => $attributes['city'],
+            'units' => $attributes['units'],
+            'cnt' => $attributes['cnt'] ?? 24, // 3 day forecast
+        ];
+
+        return $this->callApi('/forecast', $params);
+    }
+
+    /**
      * callApi
      *
      * @param  mixed $endpoint
