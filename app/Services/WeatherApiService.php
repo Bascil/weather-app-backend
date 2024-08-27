@@ -10,7 +10,6 @@ class WeatherApiService
     private $baseUri;
     private $apiKey;
 
-    // initialize data with constructors
     public function __construct()
     {
         $this->baseUri = env("WEATHER_API_ENDPOINT");
