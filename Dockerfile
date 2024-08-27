@@ -45,4 +45,4 @@ COPY --from=composer:2 /usr/bin/composer /usr/local/bin/composer
 RUN composer dump-autoload --optimize
 
 # Set the entrypoint
-ENTRYPOINT ["php", "artisan", "octane:start", "--server=frankenphp", "--port=9804", "--workers=2", "--host=0.0.0.0"]
+ENTRYPOINT ["php", "artisan", "octane:start", "--server=frankenphp", "--port=9804", "--workers=1", "--host=0.0.0.0"]
