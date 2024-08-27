@@ -29,5 +29,7 @@
         <env name="QUEUE_CONNECTION" value="sync"/>
         <env name="SESSION_DRIVER" value="array"/>
         <env name="TELESCOPE_ENABLED" value="false"/>
+        <env name="WEATHER_API_KEY" value="12345678"/>
+        <env name="WEATHER_API_ENDPOINT" value="http://test/endpoint"/>
     </php>
 </phpunit>

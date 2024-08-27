@@ -8,4 +8,5 @@ class Constants
     const UNIT_METRIC = 'metric';
     const UNIT_IMPERIAL = 'imperial';
 
+    const DEFAULT_CITY = 'nairobi';
 }

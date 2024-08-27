@@ -31,7 +31,7 @@ class GetWeatherRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'city' => ['required', 'string', 'min:3'],
+            'city' => ['nullable', 'string', 'min:3'],
             'cnt' => ['nullable', 'numeric', 'gt:0'],
             'units' => ['required', Rule::in([
                 Constants::UNIT_STANDARD,
@@ -39,5 +39,13 @@ class GetWeatherRequest extends FormRequest
                 Constants::UNIT_IMPERIAL,
             ])],
         ];
+    }
+
+    protected function prepareForValidation()
+    {
+        // Set a default value for 'city' if it's not provided
+        $this->merge([
+            'city' => $this->input('city', Constants::DEFAULT_CITY),
+        ]);
     }
 }
