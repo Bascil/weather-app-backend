@@ -6,14 +6,15 @@ COPY --from=mlocati/php-extension-installer /usr/bin/install-php-extensions /usr
 RUN install-php-extensions pcntl sockets
 
 # Install Composer
-COPY --from=composer:latest /usr/bin/composer /usr/local/bin/composer
+COPY --from=composer:2 /usr/bin/composer /usr/local/bin/composer
 
 # Copy only the files needed for composer install
 COPY composer.json composer.lock /var/www/
 WORKDIR /var/www
 
-# Install dependencies
-RUN composer install --no-dev --no-scripts --no-autoloader
+# Clear Composer cache and install dependencies
+RUN composer clear-cache && \
+    composer install --no-scripts --no-autoloader -v
 
 # Stage 2: Application
 FROM php:8.3-alpine AS application
@@ -35,8 +36,12 @@ COPY . /var/www
 COPY .env /var/www/.env
 WORKDIR /var/www
 
+# Set correct permissions
+RUN chown -R www-data:www-data /var/www && \
+    chmod -R 755 /var/www/storage
+
 # Finish Composer setup
-COPY --from=composer:latest /usr/bin/composer /usr/local/bin/composer
+COPY --from=composer:2 /usr/bin/composer /usr/local/bin/composer
 RUN composer dump-autoload --optimize
 
 # Set the entrypoint
