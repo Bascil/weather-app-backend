@@ -1,6 +1,6 @@
 # weather-app-backend
 
-A high performance, scalable backend application built with Laravel 11, optimized for Google Cloud Run, using FrankenPHP and Docker. It includes unit tests and benchmarking tools to ensure robustness and efficiency.
+A high performance, scalable backend service built with Laravel 11, optimized for Google Cloud Run, using FrankenPHP and Docker. It includes unit tests and benchmarking tools to ensure robustness and efficiency.
 
 ## Table of Contents
 
@@ -38,6 +38,8 @@ Run the docker container
 docker run -p 8080:9804 -t basilndonga/weather-app-backend
 
 ```
+
+If you encounter issues with permissions use **sudo** before the docker command
 
 ### Usage
 
