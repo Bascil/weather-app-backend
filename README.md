@@ -32,29 +32,12 @@ The project is built with a focus on performance, scalability, and maintainabili
 
 This project can be run locally if docker is installed or on any serverless container runtime such as google cloud run.
 
-#### Requirements
+Run the docker container
 
--   Docker
+```
+docker run -p 8080:9804 -t basilndonga/weather-app-backend
 
-#### Steps
-
-1.  Clone the repository:
-
-    ```bash
-    git clone git@github.com:Bascil/weather-app-backend.git
-    cd weather-app-backend
-    ```
-
-2.  Build the Docker image:
-    ```
-    docker build -t anzila/weather-app-backend .
-    ```
-3.  Run the container
-
-    ```
-    docker run -p 8080:9804 -t anzila/weather-app-backend
-
-    ```
+```
 
 ### Usage
 
@@ -105,8 +88,3 @@ Transfer/sec:    430.77KB
 ### Unit Tests
 
 Unit tests are written using PHPUnit to ensure code quality and reliability.
-
-```
-php artisan test
-
-```
