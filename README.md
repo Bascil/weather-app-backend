@@ -4,20 +4,12 @@ A high performance, scalable backend application built with Laravel 11, optimize
 
 ## Table of Contents
 
--   [Features](#features)
 -   [Technologies](#technologies)
 -   [Approach](#approach)
 -   [Installation](#installation)
 -   [Usage](#usage)
 -   [Benchmarking](#benchmarking)
 -   [Unit Tests](#unit-tests)
-
-### Features
-
--   RESTful API for weather data and forecasts
--   Highly scalable architecture suitable for serverless environments
--   Optimized performance using FrankenPHP
--   Containerized with Docker for consistent development and deployment
 
 ### Technologies
 
@@ -89,33 +81,32 @@ This project can be run locally if docker is installed or on any serverless cont
 
 ### Benchmarking
 
-Run a benchmark on 16 threads, 100 connections over 30s duration
-Use wrk for performance testing
+Run a benchmark on 16 threads, 100 connections over 30s duration. Use wrk for performance testing
 
-    ```
+```
+wrk -t16 -c100 -d30s --latency http://127.0.0.1:8080/api/health-check
 
-    wrk -t16 -c100 -d30s --latency http://127.0.0.1:8080/api/health-check
+Running 30s test @ http://127.0.0.1:8080/api/health-check
+  16 threads and 100 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    37.23ms   13.26ms 129.78ms   74.33%
+    Req/Sec   161.91     30.97   310.00     70.35%
+  Latency Distribution
+     50%   36.94ms
+     75%   44.86ms
+     90%   52.69ms
+     99%   72.46ms
+  77558 requests in 30.07s, 12.65MB read
+Requests/sec:   2579.56
+Transfer/sec:    430.77KB
 
-        Running 30s test @ http://127.0.0.1:8080/api/health-check
-        16 threads and 100 connections
-        Thread Stats Avg Stdev Max +/- Stdev
-        Latency 37.23ms 13.26ms 129.78ms 74.33%
-        Req/Sec 161.91 30.97 310.00 70.35%
-        Latency Distribution
-        50% 36.94ms
-        75% 44.86ms
-        90% 52.69ms
-        99% 72.46ms
-        77558 requests in 30.07s, 12.65MB read
-        Requests/sec: 2579.56
-        Transfer/sec: 430.77KB
-
-    ```
+```
 
 ### Unit Tests
 
 Unit tests are written using PHPUnit to ensure code quality and reliability.
 
-    ```
-    php artisan test
-    ```
+```
+php artisan test
+
+```
