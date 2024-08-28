@@ -16,7 +16,7 @@ A high performance, scalable backend service built with Laravel 11, optimized fo
 
 -   **Laravel 11**: Latest version.
 -   **Google Cloud Run**: Serverless container runtime.
--   **FrankenPHP**: Optimized web server with embedded PHP.
+-   **FrankenPHP**: High Performance PHP runtime.
 -   **Docker**: Containerization for a consistent development and production environment.
 -   **Muiltistage Build**: Optimized build process for cloud deployment.
 -   **wrk**: HTTP benchmarking tool.
