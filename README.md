@@ -96,19 +96,16 @@ Transfer/sec:    430.77KB
 
 Tests are written using PHPUnit to ensure code quality and reliability.
 
-```
-public function test_can_get_weather_data_with_city()
-    {
-        $headers = [];
-
-        $this->instance(
-            WeatherApiService::class,
-            \Mockery::mock(WeatherApiService::class, function (MockInterface $mock) {
-                $mock->shouldReceive('getWeatherData')->once();
-            })
-        );
-
-        $response = $this->get('/api/v1/weather/data?city=kericho&units=metric', $headers);
-        $response->assertStatus(Response::HTTP_OK);
-    }
+```php
+public function test_can_get_weather_data_with_city() {
+    $headers = [];
+    $this->instance(
+        WeatherApiService::class,
+        \Mockery::mock(WeatherApiService::class, function (MockInterface $mock) {
+            $mock->shouldReceive('getWeatherData')->once();
+        })
+    );
+    $response = $this->get('/api/v1/weather/data?city=kericho&units=metric', $headers);
+    $response->assertStatus(Response::HTTP_OK);
+}
 ```
