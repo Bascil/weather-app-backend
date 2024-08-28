@@ -15,7 +15,7 @@ A high performance, scalable backend service built with Laravel 11, optimized fo
 ### Technologies
 
 -   **Laravel 11**: Latest version.
--   **Google Cloud Run**: Serverless deployment for scalable and efficient hosting.
+-   **Google Cloud Run**: Serverless container runtime.
 -   **FrankenPHP**: Optimized web server with embedded PHP.
 -   **Docker**: Containerization for a consistent development and production environment.
 -   **Muiltistage Build**: Optimized build process for cloud deployment.
@@ -33,7 +33,7 @@ The frontend is decoupled from backend and is hosted on Netlify.
 
 The project is built with a focus on performance, scalability, and maintainability:
 
--   Performance: Leveraging FrankenPHP and Sultistate build for optimized resource usage.
+-   Performance: Leveraging FrankenPHP and multistage build for optimized resource usage.
 -   Scalability: Deployed on Google Cloud Run, allowing auto-scaling based on demand.
 -   Maintainability: Clean code practices, unit tests, and CI/CD with google cloud build.
 
