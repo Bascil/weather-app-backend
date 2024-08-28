@@ -16,8 +16,7 @@ class WeatherApiTest extends TestCase
         $this->instance(
             WeatherApiService::class,
             \Mockery::mock(WeatherApiService::class, function (MockInterface $mock) {
-                $mock->shouldReceive('getWeatherData')
-                    ->once();
+                $mock->shouldReceive('getWeatherData')->once();
             })
         );
 
@@ -32,8 +31,7 @@ class WeatherApiTest extends TestCase
         $this->instance(
             WeatherApiService::class,
             \Mockery::mock(WeatherApiService::class, function (MockInterface $mock) {
-                $mock->shouldReceive('getWeatherData')
-                    ->once();
+                $mock->shouldReceive('getWeatherData')->once();
             })
         );
 
@@ -48,8 +46,7 @@ class WeatherApiTest extends TestCase
         $this->instance(
             WeatherApiService::class,
             \Mockery::mock(WeatherApiService::class, function (MockInterface $mock) {
-                $mock->shouldReceive('getWeatherForecast')
-                    ->once();
+                $mock->shouldReceive('getWeatherForecast')->once();
             })
         );
 
