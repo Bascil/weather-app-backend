@@ -32,11 +32,8 @@ The project is built with a focus on performance, scalability, and maintainabili
 
 This project can be run locally if docker is installed or on any serverless container runtime such as google cloud run.
 
-Run the docker container
-
 ```
 docker run -p 8080:9804 -t basilndonga/weather-app-backend
-
 ```
 
 If you encounter issues with permissions use **sudo** before the docker command
