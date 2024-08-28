@@ -10,7 +10,7 @@ A high performance, scalable backend service built with Laravel 11, optimized fo
 -   [Installation](#installation)
 -   [Usage](#usage)
 -   [Benchmarking](#benchmarking)
--   [Unit Tests](#unit-tests)
+-   [Testing](#testing)
 
 ### Technologies
 
@@ -92,6 +92,23 @@ Transfer/sec:    430.77KB
 
 ```
 
-### Unit Tests
+### Testing
 
-Unit tests are written using PHPUnit to ensure code quality and reliability.
+Tests are written using PHPUnit to ensure code quality and reliability.
+
+```
+public function test_can_get_weather_data_with_city()
+    {
+        $headers = [];
+
+        $this->instance(
+            WeatherApiService::class,
+            \Mockery::mock(WeatherApiService::class, function (MockInterface $mock) {
+                $mock->shouldReceive('getWeatherData')->once();
+            })
+        );
+
+        $response = $this->get('/api/v1/weather/data?city=kericho&units=metric', $headers);
+        $response->assertStatus(Response::HTTP_OK);
+    }
+```
