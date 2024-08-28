@@ -67,7 +67,6 @@ If you encounter issues with permissions use **sudo** before the docker command
 
     ```
     curl "http://localhost:8080/api/v1/weather/forecast?cnt=16&units=metric&city=nairobi"
-
     ```
 
 ### Benchmarking
