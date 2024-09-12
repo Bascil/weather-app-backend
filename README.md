@@ -5,7 +5,7 @@ A high performance, scalable backend service built with Laravel 11, optimized fo
 ## Table of Contents
 
 -   [Technologies](#technologies)
--   [Demo](#demo)
+-   [Frontend](#frontend)
 -   [Approach](#approach)
 -   [Installation](#installation)
 -   [Usage](#usage)
@@ -21,11 +21,10 @@ A high performance, scalable backend service built with Laravel 11, optimized fo
 -   **Muiltistage Build**: Optimized build process for cloud deployment.
 -   **wrk**: HTTP benchmarking tool.
 
-### Demo
+### Frontend
 
 The frontend is decoupled from backend and is hosted on Netlify.
 
--   **Live Demo**: [Link](https://weather-app-frontend-ui.netlify.app)
 -   **Frontend Repo**: [Repo](https://github.com/Bascil/weather-app-frontend)
 -   **Technology**: NextJs 14
 
