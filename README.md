@@ -23,7 +23,7 @@ A high performance, scalable backend service built with Laravel 11, optimized fo
 
 ### Frontend
 
-The frontend is decoupled from backend and is hosted on Netlify.
+The frontend is decoupled from backend.
 
 -   **Frontend Repo**: [Repo](https://github.com/Bascil/weather-app-frontend)
 -   **Technology**: NextJs 14
